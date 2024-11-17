@@ -144,6 +144,7 @@ Examples:
   | inventory-item-virtual |
   | last-accessed-is-datetime |
   | leveraged-authorization-has-authorization-type |
+  | leveraged-authorization-has-component |
   | leveraged-authorization-has-impact-level |
   | leveraged-authorization-has-system-identifier |
   | leveraged-authorization-has-valid-impact-level |
@@ -439,6 +440,8 @@ Examples:
   | last-accessed-is-datetime-PASS.yaml |
   | leveraged-authorization-has-authorization-type-FAIL.yaml |
   | leveraged-authorization-has-authorization-type-PASS.yaml |
+  | leveraged-authorization-has-component-FAIL.yaml |
+  | leveraged-authorization-has-component-PASS.yaml |
   | leveraged-authorization-has-impact-level-FAIL.yaml |
   | leveraged-authorization-has-impact-level-PASS.yaml |
   | leveraged-authorization-has-system-identifier-FAIL.yaml |
