@@ -1653,8 +1653,28 @@ property.</p>
       <prop name="public" value="yes"/>
       <status state="operational"/>
     </component>
-
-
+    
+    <!-- Virtual Appliance Component -->
+    <component uuid="11111111-2222-4000-8000-009000500006" type="network">
+      <title>Network Virtual Appliance</title>
+      <description>
+        <p>A virtual appliance that exists within the authorization boundary.</p>
+        <p>Describe the virtual appliance and what it is used for.</p>
+      </description>
+      <prop name="implementation-point" value="internal"/>
+      <status state="operational"/>
+    </component>
+    
+    <!-- Hardware Component -->
+    <component uuid="11111111-2222-4000-8000-009000500007" type="hardware">
+      <title>Hardware</title>
+      <description>
+        <p>A component representing hardware that exists within the authorization boundary.</p>
+        <p>Describe the hardware and what it is used for.</p>
+      </description>
+      <prop name="implementation-point" value="internal"/>
+      <status state="operational"/>
+    </component>
 
     <!-- Section 10 / Appendix Q - Cryptographic Modules -->
     <!-- NOTE: Must set type="cryptographic-module" -->
@@ -2206,7 +2226,7 @@ approved.</p>
       <!-- <prop name="is-scanned" value="yes"/> -->
       <status state="operational"/>
     </component>
-    <component type="service" uuid="11111111-2222-4000-8000-009000500006">
+    <component type="service" uuid="11111111-2222-4000-8000-009000500018">
       <title>Email Service</title>
       <description>
         <p>Email Service</p>
@@ -2295,15 +2315,8 @@ approved.</p>
       <responsible-party role-id="asset-administrator">
         <party-uuid>11111111-2222-4000-8000-004000000017</party-uuid>
       </responsible-party>
-      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007">
-        <remarks>
-          <p>This links to a FIPS 140-2 validated software component that is used by this
-inventory item. This type of linkage to a validation through the component is
-preferable to the link[rel='validation'] example above.</p>
-        </remarks>
-      </implemented-component>
       <remarks>
-        <p>COMMENTS: Additional information about this item.</p>
+        <p>This inventory items demonstrates the legacy approach in which the inventory item does not have a reference to a component.</p>
       </remarks>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000002">
@@ -2338,7 +2351,7 @@ preferable to the link[rel='validation'] example above.</p>
       <responsible-party role-id="asset-administrator">
         <party-uuid>11111111-2222-4000-8000-004000000017</party-uuid>
       </responsible-party>
-      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007">
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000500006">
         <prop name="asset-id" value="unique-asset-ID-3"/>
       </implemented-component>
       <remarks>
@@ -2374,7 +2387,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
-      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007"/>
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000500006"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000005">
       <description>
@@ -2407,7 +2420,7 @@ preferable to the link[rel='validation'] example above.</p>
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
-      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007"/>
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000500007"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000007">
       <description>
@@ -2440,7 +2453,7 @@ preferable to the link[rel='validation'] example above.</p>
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
-      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007"/>
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000500005"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000009">
       <description>
