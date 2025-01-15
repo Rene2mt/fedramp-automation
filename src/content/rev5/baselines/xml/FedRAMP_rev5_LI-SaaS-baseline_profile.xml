@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.4/xml/schema/oscal_complete_schema.xsd" schematypens="http://www.w3.org/2001/XMLSchema" title="OSCAL complete schema"?>
-<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="ece2fd2d-87f7-476a-a295-6e1ec8153771">
+<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="34972a30-1cbb-4271-8f37-39a84993c5e0">
     <metadata>
         <title>FedRAMP Rev 5 Tailored Low Impact Software as a Service (LI-SaaS) Baseline</title>
         <published>2024-09-24T02:24:00Z</published>
-        <last-modified>2024-09-24T02:24:00Z</last-modified>
-        <version>fedramp2.1.0-oscal1.0.4</version>
-        <oscal-version>1.0.4</oscal-version>
+		<last-modified>2025-01-15T00:00:00Z</last-modified>
+		<version>fedramp-3.0.0rc1-oscal-1.1.2</version>
+		<oscal-version>1.1.2</oscal-version>
         <role id="prepared-by">
             <title>Document creator</title>
         </role>
@@ -1337,28 +1337,28 @@
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part id="ac-2_obj_fr" name="assessment-objective">
+                <part id="ac-2_obj_fr" name="assessment-objective" ns="http://fedramp.gov/ns/oscal">
                     <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="EXAMINE"/>
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="INTERVIEW"/>
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="TEST"/>
                     <p>Determine if the organization defines information system account types to be identified and selected to support organizational missions/business functions.</p>
                 </part>
-                <part id="ac-2_asmt_fr.1" name="assessment-method">
+                <part id="ac-2_asmt_fr.1" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" value="EXAMINE"/>
-                    <part name="assessment-objects">
+                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
                         <p>Access control policy; procedures addressing account management; security plan; information system design documentation; information system configuration settings and associated documentation; list of active system accounts along with the name of the individual associated with each account; list of conditions for group and role membership; notifications or records of recently transferred, separated, or terminated employees; list of recently disabled information system accounts along with the name of the individual associated with each account; access authorization records; account management compliance reviews; information system monitoring records; information system audit records; other relevant documents or records.</p>
                     </part>
                 </part>
-                <part id="ac-2_asmt_fr.2" name="assessment-method">
+                <part id="ac-2_asmt_fr.2" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" value="INTERVIEW"/>
-                    <part name="assessment-objects">
+                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
                         <p>Organizational personnel with account management responsibilities; system/network administrators; organizational personnel with information security responsibilities.</p>
                     </part>
                 </part>
-                <part id="ac-2_asmt_fr.3" name="assessment-method">
+                <part id="ac-2_asmt_fr.3" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" value="TEST"/>
-                    <part name="assessment-objects">
+                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
                         <p>Organizational processes for account management on the information system; automated mechanisms for implementing account management.</p>
                     </part>
                 </part>
@@ -1751,17 +1751,17 @@
                 <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
                     <p>Required - Specifically include details of least functionality.</p>
                 </part>
-                <part id="cm-6_fr" name="item">
+                <part id="cm-6_fr" name="item" ns="http://fedramp.gov/ns/oscal">
                     <title>CM-6(a) Additional FedRAMP Requirements and Guidance</title>
-                    <part id="cm-6_fr_smt.1" name="item">
+                    <part id="cm-6_fr_smt.1" name="item" ns="http://fedramp.gov/ns/oscal">
                         <prop name="label" value="Requirement 1:"/>
                         <p>The service provider shall use the Center for Internet Security guidelines (Level 1) to establish configuration settings or establishes its own configuration settings if USGCB is not available.</p>
                     </part>
-                    <part id="cm-6_fr_smt.2" name="item">
+                    <part id="cm-6_fr_smt.2" name="item" ns="http://fedramp.gov/ns/oscal">
                         <prop name="label" value="Requirement 2:"/>
                         <p>The service provider shall ensure that checklists for configuration settings are Security Content Automation Protocol (SCAP) (<a href="http://scap.nist.gov/">http://scap.nist.gov/</a>) validated or SCAP compatible (if validated checklists are not available).</p>
                     </part>
-                    <part id="cm-6_fr_gdn.1" name="guidance">
+                    <part id="cm-6_fr_gdn.1" name="guidance" ns="http://fedramp.gov/ns/oscal">
                         <prop name="label" value="Guidance:"/>
                         <p>Information on the USGCB checklists can be found at: <a href="https://csrc.nist.gov/Projects/United-States-Government-Configuration-Baseline">https://csrc.nist.gov/Projects/United-States-Government-Configuration-Baseline</a>.</p>
                     </part>
@@ -1901,9 +1901,9 @@
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part id="ia-2.1_fr" name="item">
+                <part id="ia-2.1_fr" name="item" ns="http://fedramp.gov/ns/oscal">
                     <title>IA-2(1) Additional FedRAMP Requirements and Guidance</title>
-                    <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                    <part name="guidance" ns="http://fedramp.gov/ns/oscal" class="FedRAMP-Tailored-LI-SaaS">
                         <p>FedRAMP requires a minimum of multi-factor authentication for all Federal privileged users, if acceptance of PIV credentials is not supported. The implementation status and details of how this control is implemented must be clearly defined by the CSP.</p>
                     </part>
                 </part>
@@ -1939,7 +1939,7 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part id="ia-2.12_obj_fr" name="objective">
+                <part id="ia-2.12_obj_fr" name="objective" ns="http://fedramp.gov/ns/oscal">
                     <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="EXAMINE"/>
                     <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="INTERVIEW"/>
@@ -2311,9 +2311,9 @@
                 </part>
             </add>
             <add by-id="pe-14_smt" position="ending">
-                <part id="pe-14_fr" name="item">
+                <part id="pe-14_fr" name="item" ns="http://fedramp.gov/ns/oscal">
                     <title>PE-14(a) Additional FedRAMP Requirements and Guidance</title>
-                    <part id="pe-14_fr_smt.a" name="item">
+                    <part id="pe-14_fr_smt.a" name="item" ns="http://fedramp.gov/ns/oscal">
                         <prop name="label" value="(a) Requirement:"/>
                         <p>The service provider measures temperature at server inlets and humidity levels by dew point.</p>
                     </part>
