@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.4/xml/schema/oscal_complete_schema.xsd" schematypens="http://www.w3.org/2001/XMLSchema" title="OSCAL complete schema"?>
-<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="34972a30-1cbb-4271-8f37-39a84993c5e0">
+<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="08cb890c-a447-4414-a323-742221b00ec8">
     <metadata>
         <title>FedRAMP Rev 5 Tailored Low Impact Software as a Service (LI-SaaS) Baseline</title>
         <published>2024-09-24T02:24:00Z</published>
-        <last-modified>2025-01-15T00:00:00Z</last-modified>
+        <last-modified>2025-01-23T00:00:00Z</last-modified>
 	<version>fedramp-3.0.0rc1-oscal-1.1.2</version>
 	<oscal-version>1.1.2</oscal-version>
         <role id="prepared-by">
@@ -304,7 +304,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="at-2_prm_1">
+        <set-parameter param-id="at-02_odp.01">
+            <constraint>
+                <description>
+                    <p>at least annually</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="at-02_odp.02">
             <constraint>
                 <description>
                     <p>at least annually</p>
@@ -366,8 +373,15 @@
                     <p>successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes</p>
                 </description>
             </constraint>
+        </set-parameter>	
+        <set-parameter param-id="au-02_odp.02">
+            <constraint>
+                <description>
+                    <p>organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event.</p>
+                </description>
+            </constraint>
         </set-parameter>
-        <set-parameter param-id="au-2_prm_2">
+        <set-parameter param-id="au-02_odp.03">
             <constraint>
                 <description>
                     <p>organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event.</p>
@@ -472,7 +486,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="ca-7_prm_4">
+        <set-parameter param-id="ca-07_odp.04">
+            <constraint>
+                <description>
+                    <p>to include JAB/AO</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="ca-07_odp.06">
             <constraint>
                 <description>
                     <p>to include JAB/AO</p>
@@ -593,7 +614,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="cp-4_prm_2">
+        <set-parameter param-id="cp-04_odp.02">
+            <constraint>
+                <description>
+                    <p>classroom exercise/table top written tests</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="cp-04_odp.03">
             <constraint>
                 <description>
                     <p>classroom exercise/table top written tests</p>
@@ -720,7 +748,21 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="ir-8_prm_5">
+        <set-parameter param-id="ir-08_odp.05">
+            <constraint>
+                <description>
+                    <p>see additional FedRAMP Requirements and Guidance</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="ir-08_odp.06">
+            <constraint>
+                <description>
+                    <p>see additional FedRAMP Requirements and Guidance</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="ir-08_odp.07">
             <constraint>
                 <description>
                     <p>see additional FedRAMP Requirements and Guidance</p>
@@ -769,7 +811,21 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="mp-6_prm_1">
+        <set-parameter param-id="mp-06_odp.01">
+            <constraint>
+                <description>
+                    <p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="mp-06_odp.02">
+            <constraint>
+                <description>
+                    <p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="mp-06_odp.03">
             <constraint>
                 <description>
                     <p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
@@ -825,7 +881,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="pe-3_prm_9">
+        <set-parameter param-id="pe-03_odp.09">
+            <constraint>
+                <description>
+                    <p>at least annually</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="pe-03_odp.10">
             <constraint>
                 <description>
                     <p>at least annually</p>
@@ -867,7 +930,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="pe-16_prm_1">
+        <set-parameter param-id="pe-16_odp.01">
+            <constraint>
+                <description>
+                    <p>all information system components</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="pe-16_odp.02">
             <constraint>
                 <description>
                     <p>all information system components</p>
@@ -951,7 +1021,15 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="ps-3_prm_1">
+        <set-parameter param-id="ps-03_odp.01">
+            <constraint>
+                <description>
+                    <p>for national security clearances; a reinvestigation is required during the fifth (5th) year for top secret security clearance, the tenth (10th) year for secret security clearance, and fifteenth (15th) year for confidential security clearance.</p>
+                    <p>For moderate risk law enforcement and high impact public trust level, a reinvestigation is required during the fifth (5th) year. There is no reinvestigation for other moderate risk positions or any low risk positions</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="ps-03_odp.02">
             <constraint>
                 <description>
                     <p>for national security clearances; a reinvestigation is required during the fifth (5th) year for top secret security clearance, the tenth (10th) year for secret security clearance, and fifteenth (15th) year for confidential security clearance.</p>
@@ -1057,7 +1135,14 @@
                 </description>
             </constraint>
         </set-parameter>
-        <set-parameter param-id="ra-5_prm_1">
+        <set-parameter param-id="ra-05_odp.01">
+            <constraint>
+                <description>
+                    <p>monthly operating system/infrastructure; monthly web applications (including APIs) and databases</p>
+                </description>
+            </constraint>
+        </set-parameter>
+        <set-parameter param-id="ra-05_odp.02">
             <constraint>
                 <description>
                     <p>monthly operating system/infrastructure; monthly web applications (including APIs) and databases</p>
