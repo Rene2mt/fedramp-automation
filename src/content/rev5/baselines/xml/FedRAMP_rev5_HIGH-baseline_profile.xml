@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.4/xml/schema/oscal_complete_schema.xsd" schematypens="http://www.w3.org/2001/XMLSchema" title="OSCAL complete schema"?>
-<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="fb45bdae-dc80-49e3-b072-3820c6a143fe">
+<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="ae9a85fc-67d3-4713-8238-b30059d744f1">
 	<metadata>
 		<title>FedRAMP Rev 5 High Baseline</title>
 		<published>2024-09-24T02:24:00Z</published>
-		<last-modified>2025-01-15T00:00:00Z</last-modified>
+		<last-modified>2025-01-22T00:00:00Z</last-modified>
 		<version>fedramp-3.0.0rc1-oscal-1.1.2</version>
 		<oscal-version>1.1.2</oscal-version>
 		<role id="prepared-by">
@@ -579,7 +579,21 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="ac-6.1_prm_2">
+		<set-parameter param-id="ac-06.01_odp.02">
+			<constraint>
+				<description>
+					<p>all functions not publicly accessible</p>
+				</description>
+			</constraint>
+		</set-parameter>		
+		<set-parameter param-id="ac-06.01_odp.03">
+			<constraint>
+				<description>
+					<p>all functions not publicly accessible</p>
+				</description>
+			</constraint>
+		</set-parameter>		
+		<set-parameter param-id="ac-06.01_odp.04">
 			<constraint>
 				<description>
 					<p>all functions not publicly accessible</p>
@@ -684,13 +698,20 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="at-2_prm_1">
+		<set-parameter param-id="at-02_odp.01">
 			<constraint>
 				<description>
 					<p>at least annually</p>
 				</description>
 			</constraint>
 		</set-parameter>
+		<set-parameter param-id="at-02_odp.02">
+			<constraint>
+				<description>
+					<p>at least annually</p>
+				</description>
+			</constraint>
+		</set-parameter>		
 		<set-parameter param-id="at-02_odp.06">
 			<constraint>
 				<description>
@@ -746,14 +767,21 @@
 					<p>successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes</p>
 				</description>
 			</constraint>
-		</set-parameter>
-		<set-parameter param-id="au-2_prm_2">
+		</set-parameter>	
+		<set-parameter param-id="au-02_odp.02">
 			<constraint>
 				<description>
 					<p>organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event.</p>
 				</description>
 			</constraint>
 		</set-parameter>
+		<set-parameter param-id="au-02_odp.03">
+			<constraint>
+				<description>
+					<p>organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event.</p>
+				</description>
+			</constraint>
+		</set-parameter>		
 		<set-parameter param-id="au-02_odp.04">
 			<constraint>
 				<description>
@@ -957,7 +985,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="ca-7_prm_4">
+		<set-parameter param-id="ca-07_odp.04">
+			<constraint>
+				<description>
+					<p>to include JAB/AO</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="ca-07_odp.06">
 			<constraint>
 				<description>
 					<p>to include JAB/AO</p>
@@ -1048,13 +1083,20 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cm-5.5_prm_1">
+		<set-parameter param-id="cm-05.05_odp.01">
 			<constraint>
 				<description>
 					<p>at least quarterly</p>
 				</description>
 			</constraint>
 		</set-parameter>
+		<set-parameter param-id="cm-05.05_odp.02">
+			<constraint>
+				<description>
+					<p>at least quarterly</p>
+				</description>
+			</constraint>
+		</set-parameter>		
 		<set-parameter param-id="cm-07.01_odp.01">
 			<constraint>
 				<description>
@@ -1076,7 +1118,21 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cm-8.3_prm_1">
+		<set-parameter param-id="cm-08.03_odp.01">
+			<constraint>
+				<description>
+					<p>automated mechanisms with a maximum five-minute delay in detection</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cm-08.03_odp.02">
+			<constraint>
+				<description>
+					<p>automated mechanisms with a maximum five-minute delay in detection</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cm-08.03_odp.03">
 			<constraint>
 				<description>
 					<p>automated mechanisms with a maximum five-minute delay in detection</p>
@@ -1188,14 +1244,28 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cp-4_prm_2">
+		<set-parameter param-id="cp-04_odp.02">
 			<constraint>
 				<description>
 					<p>functional exercises</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cp-8.4_prm_1">
+		<set-parameter param-id="cp-04_odp.03">
+			<constraint>
+				<description>
+					<p>functional exercises</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cp-08.04_odp.01">
+			<constraint>
+				<description>
+					<p>annually</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cp-08.04_odp.02">
 			<constraint>
 				<description>
 					<p>annually</p>
@@ -1223,14 +1293,28 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cp-9.1_prm_1">
+		<set-parameter param-id="cp-09.01_odp.01">
 			<constraint>
 				<description>
 					<p>at least monthly</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="cp-9.5_prm_1">
+		<set-parameter param-id="cp-09.01_odp.02">
+			<constraint>
+				<description>
+					<p>at least monthly</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cp-09.05_odp.01">
+			<constraint>
+				<description>
+					<p>time period and transfer rate consistent with the recovery time and recovery point objectives defined in the service provider and organization SLA.</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="cp-09.05_odp.02">
 			<constraint>
 				<description>
 					<p>time period and transfer rate consistent with the recovery time and recovery point objectives defined in the service provider and organization SLA.</p>
@@ -1405,7 +1489,21 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="ir-8_prm_5">
+		<set-parameter param-id="ir-08_odp.05">
+			<constraint>
+				<description>
+					<p>see additional FedRAMP Requirements and Guidance</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="ir-08_odp.06">
+			<constraint>
+				<description>
+					<p>see additional FedRAMP Requirements and Guidance</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="ir-08_odp.07">
 			<constraint>
 				<description>
 					<p>see additional FedRAMP Requirements and Guidance</p>
@@ -1482,7 +1580,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-2_prm_1">
+		<set-parameter param-id="mp-02_odp.01">
+			<constraint>
+				<description>
+					<p>all types of digital and/or non-digital media containing sensitive information</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-02_odp.03">
 			<constraint>
 				<description>
 					<p>all types of digital and/or non-digital media containing sensitive information</p>
@@ -1503,14 +1608,49 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-4_prm_1">
+		<set-parameter param-id="mp-04_odp.01">
 			<constraint>
 				<description>
 					<p>all types of digital and non-digital media with sensitive information</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-4_prm_2">
+		<set-parameter param-id="mp-04_odp.01">
+			<constraint>
+				<description>
+					<p>all types of digital and non-digital media with sensitive information</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-04_odp.02">
+			<constraint>
+				<description>
+					<p>all types of digital and non-digital media with sensitive information</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-04_odp.03">
+			<constraint>
+				<description>
+					<p>all types of digital and non-digital media with sensitive information</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-04_odp.04">
+			<constraint>
+				<description>
+					<p>all types of digital and non-digital media with sensitive information</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-04_odp.05">
+			<constraint>
+				<description>
+					<p>see additional FedRAMP requirements and guidance</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-04_odp.06">
 			<constraint>
 				<description>
 					<p>see additional FedRAMP requirements and guidance</p>
@@ -1524,21 +1664,49 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-5_prm_2">
+		<set-parameter param-id="mp-05_odp.02">
 			<constraint>
 				<description>
 					<p>prior to leaving secure/controlled environment: for digital media, encryption in compliance with Federal requirements and utilizes FIPS validated or NSA approved cryptography (see SC-13.); for non-digital media, secured in locked container</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-6_prm_1">
+		<set-parameter param-id="mp-05_odp.03">
+			<constraint>
+				<description>
+					<p>prior to leaving secure/controlled environment: for digital media, encryption in compliance with Federal requirements and utilizes FIPS validated or NSA approved cryptography (see SC-13.); for non-digital media, secured in locked container</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-06_odp.01">
 			<constraint>
 				<description>
 					<p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="mp-6.2_prm_1">
+		<set-parameter param-id="mp-06_odp.02">
+			<constraint>
+				<description>
+					<p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-06_odp.03">
+			<constraint>
+				<description>
+					<p>techniques and procedures IAW NIST SP 800-88 Section 4: Reuse and Disposal of Storage Media and Hardware</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-06.02_odp.01">
+			<constraint>
+				<description>
+					<p>at least every six (6) months</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="mp-06.02_odp.02">
 			<constraint>
 				<description>
 					<p>at least every six (6) months</p>
@@ -1594,7 +1762,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="pe-3_prm_9">
+		<set-parameter param-id="pe-03_odp.09">
+			<constraint>
+				<description>
+					<p>at least annually or earlier as required by a security relevant event.</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="pe-03_odp.10">
 			<constraint>
 				<description>
 					<p>at least annually or earlier as required by a security relevant event.</p>
@@ -1671,7 +1846,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="pe-16_prm_1">
+		<set-parameter param-id="pe-16_odp.01">
+			<constraint>
+				<description>
+					<p>all information system components</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="pe-16_odp.02">
 			<constraint>
 				<description>
 					<p>all information system components</p>
@@ -1776,7 +1958,15 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="ps-3_prm_1">
+		<set-parameter param-id="ps-03_odp.01">
+			<constraint>
+				<description>
+					<p>for national security clearances; a reinvestigation is required during the fifth (5th) year for top secret security clearance, the tenth (10th) year for secret security clearance, and fifteenth (15th) year for confidential security clearance.</p>
+					<p>For moderate risk law enforcement and high impact public trust level, a reinvestigation is required during the fifth (5th) year. There is no reinvestigation for other moderate risk positions or any low risk positions</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="ps-03_odp.02">
 			<constraint>
 				<description>
 					<p>for national security clearances; a reinvestigation is required during the fifth (5th) year for top secret security clearance, the tenth (10th) year for secret security clearance, and fifteenth (15th) year for confidential security clearance.</p>
@@ -1910,7 +2100,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="ra-5_prm_1">
+		<set-parameter param-id="ra-05_odp.01">
+			<constraint>
+				<description>
+					<p>monthly operating system/infrastructure; monthly web applications (including APIs) and databases</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="ra-05_odp.02">
 			<constraint>
 				<description>
 					<p>monthly operating system/infrastructure; monthly web applications (including APIs) and databases</p>
@@ -2268,7 +2465,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="si-4.4_prm_1">
+		<set-parameter param-id="si-04.04_odp.01">
+			<constraint>
+				<description>
+					<p>continuously</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="si-04.04_odp.03">
 			<constraint>
 				<description>
 					<p>continuously</p>
@@ -2310,14 +2514,42 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="si-7.1_prm_3">
+		<set-parameter param-id="si-07.01_odp.03">
 			<constraint>
 				<description>
 					<p>selection to include security relevant event</p>
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="si-7.1_prm_4">
+		<set-parameter param-id="si-07.01_odp.07">
+			<constraint>
+				<description>
+					<p>selection to include security relevant event</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="si-07.01_odp.11">
+			<constraint>
+				<description>
+					<p>selection to include security relevant event</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="si-07.01_odp.04">
+			<constraint>
+				<description>
+					<p>at least monthly</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="si-07.01_odp.08">
+			<constraint>
+				<description>
+					<p>at least monthly</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="si-07.01_odp.12">
 			<constraint>
 				<description>
 					<p>at least monthly</p>
@@ -2345,7 +2577,14 @@
 				</description>
 			</constraint>
 		</set-parameter>
-		<set-parameter param-id="sr-1_prm_1">
+		<set-parameter param-id="sr-01_odp.01">
+			<constraint>
+				<description>
+					<p>to include chief privacy and ISSO and/or similar role or designees</p>
+				</description>
+			</constraint>
+		</set-parameter>
+		<set-parameter param-id="sr-01_odp.02">
 			<constraint>
 				<description>
 					<p>to include chief privacy and ISSO and/or similar role or designees</p>
