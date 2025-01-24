@@ -767,7 +767,7 @@
 					<p>successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes</p>
 				</description>
 			</constraint>
-		</set-parameter>	
+		</set-parameter>
 		<set-parameter param-id="au-02_odp.02">
 			<constraint>
 				<description>
