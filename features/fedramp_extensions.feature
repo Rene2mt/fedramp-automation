@@ -166,7 +166,6 @@ Examples:
   | network-component-has-implementation-point |
   | non-provider-responsible-role-references-user |
   | party-has-name |
-  | privilege-level |
   | prop-response-point-has-cardinality-one |
   | resource-has-base64-or-rlink |
   | resource-has-title |
@@ -494,8 +493,6 @@ Examples:
   | non-provider-responsible-role-references-user-PASS.yaml |
   | party-has-name-FAIL.yaml |
   | party-has-name-PASS.yaml |
-  | privilege-level-FAIL.yaml |
-  | privilege-level-PASS.yaml |
   | resource-has-base64-or-rlink-FAIL.yaml |
   | resource-has-base64-or-rlink-PASS.yaml |
   | resource-has-title-FAIL.yaml |

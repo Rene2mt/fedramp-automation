@@ -585,8 +585,7 @@
     <prop name="identity-assurance-level" value="2"/>
     <prop name="authenticator-assurance-level" value="2"/>
     <prop name="federation-assurance-level" value="2"/>
-    <prop ns="http://fedramp.gov/ns/oscal" name="fully-operational-date"
-      value="2023-12-31T00:00:00Z"/>
+    <prop ns="http://fedramp.gov/ns/oscal" name="fully-operational-date" value="2023-01-01+00:00"/>
     <prop ns="http://fedramp.gov/ns/oscal" name="authorization-type" value="fedramp-agency"/>
     <security-sensitivity-level>fips-199-high</security-sensitivity-level>
     <system-information>
@@ -758,6 +757,7 @@
       </remarks>
     </leveraged-authorization>
     <user uuid="11111111-2222-4000-8000-008000000001">
+      <prop ns="http://fedramp.gov/ns/oscal" name="privilege-level" value="read-write"/>
       <authorized-privilege>
         <title/>
         <function-performed>none</function-performed>
@@ -822,6 +822,7 @@
       <prop name="implementation-point" value="external"/>
       <prop name="inherited-uuid" value="22222222-0000-4000-9001-009000000001"/>
       <prop name="nature-of-agreement" value="sla" ns="http://fedramp.gov/ns/oscal"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="end-of-life-date" value="2025-12-31"/>
       <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
         <remarks>
           <p>If 'yes', describe the authentication method.</p>
@@ -929,6 +930,8 @@
       <prop name="leveraged-authorization-uuid" value="11111111-2222-4000-8000-019000000001"/>
       <prop name="implementation-point" value="external"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="connection-security" value="tls-1.3"/>
+      <prop name="diagram-label" value="Service A" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" class="incoming" name="information-type"
         value="C.3.5.1"/>
       <prop ns="http://fedramp.gov/ns/oscal" class="outgoing" name="information-type"
@@ -991,7 +994,9 @@
       </description>
       <prop name="implementation-point" value="external"/>
       <prop name="connection-security" value="ipsec" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="diagram-label" value="Service B" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="still-supported" value="yes" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
         <remarks>
           <p>If 'yes', describe the authentication method.</p>
@@ -1067,6 +1072,9 @@
       </description>
       <prop name="asset-type" value="saas"/>
       <prop name="inherited-uuid" value="22222222-0000-4000-9001-009000000001"/>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000000000">
+        <text>UUID of "this system" or a component within this system's boundary</text>
+      </link>
       <status state="operational"/>
       <responsible-role role-id="provider">
         <party-uuid>33333333-2222-4000-8000-004000000001</party-uuid>
@@ -1122,6 +1130,7 @@
         <p>Describe the purpose of the external system/service; specifically, provide reasons for
           connectivity (e.g., system monitoring, system alerting, download updates, etc.)</p>
       </description>
+      <prop name="diagram-label" value="Authorized Connection" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="nature-of-agreement" value="contract" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
         <remarks>
@@ -1238,6 +1247,7 @@
       <prop ns="http://fedramp.gov/ns/oscal" name="nature-of-agreement" value="isa"/>
       <prop name="implementation-point" value="external"/>
       <prop name="inherited-uuid" value="22222222-0000-4000-9001-009000000001"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <status state="operational"/>
       <responsible-role role-id="system-owner">
         <party-uuid>11111111-2222-4000-8000-004000000010</party-uuid>
@@ -1273,6 +1283,8 @@
       </description>
       <prop name="implementation-point" value="external"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="connection-security" value="ipsec"/>
+      <prop name="diagram-label" value="Service C" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="nature-of-agreement" value="sla"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="authentication-method" value="yes">
         <remarks>
@@ -1293,6 +1305,7 @@
         </remarks>
       </prop>
       <link rel="provided-by" href="#11111111-2222-4000-8000-009000100003"/>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000100003"/>
       <link rel="poam-item" href="./attachments/plan-of-action-and-milestones.xlxs"
         resource-fragment="V-1234"/>
       <status state="operational"/>
@@ -1398,6 +1411,7 @@
       <prop name="information-type" class="outgoing" value="C.3.5.8"
         ns="http://fedramp.gov/ns/oscal"/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="diagram-label" value="API Service" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
         <remarks>
           <p>If 'yes', describe the authentication method in the remarks.</p>
@@ -1488,6 +1502,7 @@
           boundary.</p>
       </description>
       <prop name="asset-type" value="cli"/>
+      <prop name="diagram-label" value="Management CLI" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="internal"/>
       <prop name="information-type" class="incoming" value="C.3.5.1"
         ns="http://fedramp.gov/ns/oscal"/>
@@ -1578,6 +1593,7 @@
           this system..</p>
       </description>
       <prop name="asset-type" value="cli"/>
+      <prop name="diagram-label" value="Management CLI" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="external"/>
       <prop name="information-type" class="incoming" value="C.3.5.1"
         ns="http://fedramp.gov/ns/oscal"/>
@@ -1737,9 +1753,29 @@
         <p>The corporate data lake. All logs are required to be sent here.</p>
       </description>
       <prop name="asset-type" value="logging"/>
+      <prop name="implementation-point" value="external"/>
       <prop name="diagram-label" value="Corporate Data Lake" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="connection-security" value="ipsec" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="information-type" value="C.3.5.1" class="incoming"
+        ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="information-type" value="C.3.5.8" class="outgoing"
+        ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>If 'yes', describe the authentication method in the remarks.</p>
+          <p>If 'no', explain why no authentication is used in the remarks.</p>
+          <p>If 'not-applicable', explain why authentication is not applicable in the
+            remarks.</p>
+        </remarks>
+      </prop>
       <link rel="receives" href="#11111111-2222-4000-8000-009001400002"/>
       <status state="operational"/>
+      <responsible-role role-id="provider">
+        <party-uuid>11111111-2222-4000-8000-004000000001</party-uuid>
+      </responsible-role>
+      <responsible-role role-id="administrator">
+        <party-uuid>11111111-2222-4000-8000-004000000010</party-uuid>
+      </responsible-role>
     </component>
 
     <component uuid="11111111-2222-4000-8000-009001400001" type="connection">
@@ -1783,6 +1819,7 @@
       <description>
         <p>None</p>
       </description>
+      <prop name="diagram-label" value="Database Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="asset-type" value="database"/>
       <prop name="function" value="see-remarks">
         <remarks>
@@ -1811,6 +1848,7 @@
         <p>Briefly describe the cryptographic module.</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="Database Encryption" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="abc"/>
       <prop name="software-version" value="1.2.3"/>
       <prop name="vendor-name" value="Databases-R-Us" ns="http://fedramp.gov/ns/oscal"/>
@@ -1819,6 +1857,14 @@
           <p>Used to encrypt and decrypt rows in the database.</p>
         </remarks>
       </prop>
+      <link rel="provided-by" href="#11111111-2222-4000-8000-009000100001"/>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000000000">
+        <text>UUID of "this system" or a component within this system's boundary</text>
+      </link>
+      <link rel="validation" href="#11111111-2222-4000-8000-009001200001">
+        <text>A link to the 3rd party validation information related to this cryptographic
+          module.</text>
+      </link>
       <status state="operational"/>
     </component>
 
@@ -1849,6 +1895,7 @@
           compliance (e.g., Module in Process).</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="Open SSL" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="OpenSSL"/>
       <prop name="software-version" value="3.0.8"/>
       <prop name="vendor-name" value="OpenSSL FIPS Provider" ns="http://fedramp.gov/ns/oscal"/>
@@ -1862,6 +1909,9 @@
           module.</text>
       </link>
       <link rel="provided-by" href="#"/>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000000000">
+        <text>UUID of "this system" or a component within this system's boundary</text>
+      </link>
       <status state="operational"/>
     </component>
     <component type="software" uuid="11111111-2222-4000-8000-009000300011">
@@ -1874,6 +1924,7 @@
           compliance (e.g., Module in Process).</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="Open SSL" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="OpenSSL"/>
       <prop name="software-version" value="3.0.9"/>
       <prop name="vendor-name" value="OpenSSL FIPS Provider" ns="http://fedramp.gov/ns/oscal"/>
@@ -1948,6 +1999,7 @@
         <p>This is an API server that communicates with a database via an encrypted connection</p>
       </description>
       <prop name="asset-type" value="api-server"/>
+      <prop name="diagram-label" value="API Service" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="allows-authenticated-scan" value="no"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200002"/>
@@ -1962,6 +2014,7 @@
         <p>This is a web server that communicates with a database via an encrypted connection</p>
       </description>
       <prop name="asset-type" value="operating-system"/>
+      <prop name="diagram-label" value="Linux Operating System" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
       <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
@@ -1975,6 +2028,9 @@
         <p>Describe the service and what it is used for.</p>
       </description>
       <prop name="implementation-point" value="internal"/>
+      <prop name="diagram-label" value="Service E" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
+      <prop name="public" value="yes"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300008" type="software">
@@ -1983,6 +2039,7 @@
         <p>This is a container image used to create container instances within the system.</p>
       </description>
       <prop name="asset-type" value="image"/>
+      <prop name="diagram-label" value="Container Image" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="asset-id" value="image"/>
       <prop name="checksum" value="a1b2c3" ns="http://fedramp.gov/ns/oscal"/>
       <link href="#11111111-2222-4000-8000-001000000059" rel="attachment"/>
@@ -1997,6 +2054,7 @@
         <p>FUNCTION: Describe typical component function.</p>
       </description>
       <prop name="asset-type" value="operating-system"/>
+      <prop name="diagram-label" value="Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="vendor-name" value="Vendor Name"/>
       <prop name="model" value="Model Number"/>
@@ -2016,8 +2074,30 @@
       <description>
         <p>Email Service</p>
       </description>
+      <prop name="diagram-label" value="Email Service" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
+      <prop name="implementation-point" value="external"/>
+      <prop name="connection-security" value="ipsec" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="information-type" value="C.3.5.1" class="incoming"
+        ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="information-type" value="C.3.5.8" class="outgoing"
+        ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>If 'yes', describe the authentication method in the remarks.</p>
+          <p>If 'no', explain why no authentication is used in the remarks.</p>
+          <p>If 'not-applicable', explain why authentication is not applicable in the
+            remarks.</p>
+        </remarks>
+      </prop>
       <link href="#11111111-2222-4000-8000-009000500005" rel="used-by"/>
       <status state="operational"/>
+      <responsible-role role-id="provider">
+        <party-uuid>11111111-2222-4000-8000-004000000001</party-uuid>
+      </responsible-role>
+      <responsible-role role-id="administrator">
+        <party-uuid>11111111-2222-4000-8000-004000000010</party-uuid>
+      </responsible-role>
       <protocol name="smtp">
         <port-range start="23" end="23" transport="TCP"/>
         <port-range start="23" end="23" transport="UDP"/>
@@ -2028,7 +2108,8 @@
       <description>
         <p>FUNCTION: Describe typical component function.</p>
       </description>
-      <prop name="asset-type" value="database"/>
+      <prop name="asset-type" value="Sample"/>
+      <prop name="diagram-label" value="Service C" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="scan-type" value="infrastructure" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="scan-type" value="database" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="vendor-name" value="Vendor Name"/>
@@ -2051,6 +2132,7 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="operating-system"/>
+      <prop name="diagram-label" value="OS Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
@@ -2062,8 +2144,12 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="database"/>
+      <prop name="diagram-label" value="Database Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>
       <prop name="allows-authenticated-scan" value="yes"/>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000000000">
+        <text>UUID of "this system" or a component within this system's boundary</text>
+      </link>
       <link href="#11111111-2222-4000-8000-009000500006" rel="used-by"/>
       <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
@@ -2078,6 +2164,7 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="appliance"/>
+      <prop name="diagram-label" value="Appliance Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="web"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="login-url"
         value="https://admin.offering.com/login"/>
@@ -2111,6 +2198,7 @@
       <prop name="asset-type" value="subnet"/>
       <prop name="public" value="no"/>
       <prop name="diagram-label" value="Data Network" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000300100"/>
       <status state="operational"/>
     </component>
@@ -2122,6 +2210,7 @@
       <prop name="asset-type" value="subnet"/>
       <prop name="public" value="no"/>
       <prop name="diagram-label" value="Production Network" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <status state="operational"/>
     </component>
     <component type="network" uuid="11111111-2222-4000-8000-009000000018">
@@ -2132,6 +2221,7 @@
       <prop name="asset-type" value="subnet"/>
       <prop name="public" value="no"/>
       <prop name="diagram-label" value="Management Network" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <status state="operational"/>
     </component>
     <component type="network" uuid="11111111-2222-4000-8000-009000000019">
@@ -2175,6 +2265,7 @@
       <prop name="asset-tag" value="Asset Tag"/>
       <prop name="vlan-id" value="VLAN Identifier"/>
       <prop name="network-id" value="Network Identifier"/>
+      <prop name="diagram-label" value="Legacy Inventory Item" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Big Vendor, Inc."/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>
@@ -2220,6 +2311,7 @@
       <prop name="asset-type" value="appliance"/>
       <prop name="virtual" value="no"/>
       <prop name="public" value="no"/>
+      <prop name="is-scanned" value="yes"/>
       <prop name="fqdn" value="dns.name"/>
       <prop name="uri" value="uniform.resource.locator"/>
       <prop name="netbios-name" value="netbios-name"/>
@@ -2249,13 +2341,16 @@
         <p>None.</p>
       </description>
       <prop name="asset-id" value="unique-asset-ID-03"/>
-      <prop name="asset-type" value="web-server"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="public" value="no"/>
       <prop name="ipv4-address" value="10.3.3.3"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a03:0303"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"
       > </implemented-component>
     </inventory-item>
@@ -2271,6 +2366,9 @@
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a04:0404"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000005">
@@ -2285,6 +2383,9 @@
       <prop name="public" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000006">
@@ -2302,6 +2403,9 @@
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"
       > </implemented-component>
     </inventory-item>
@@ -2316,7 +2420,14 @@
       <prop name="virtual" value="no"/>
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
-      <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="other">
+        <remarks>
+          <p>Remarks</p>
+        </remarks>
+      </prop>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"
       > </implemented-component>
     </inventory-item>
@@ -2335,6 +2446,9 @@
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"
       > </implemented-component>
     </inventory-item>
@@ -2350,6 +2464,9 @@
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000300100"/>
     </inventory-item>
 
@@ -2360,9 +2477,19 @@
       <prop name="asset-id" value="unique-asset-ID-10"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500001"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000011">
@@ -2372,9 +2499,19 @@
       <prop name="asset-id" value="unique-asset-ID-11"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500002"/>
     </inventory-item>
 
@@ -2385,9 +2522,19 @@
       <prop name="asset-id" value="unique-asset-ID-12"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500003"/>
     </inventory-item>
 
@@ -2398,9 +2545,19 @@
       <prop name="asset-id" value="unique-asset-ID-13"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500004"/>
     </inventory-item>
 
@@ -2411,9 +2568,19 @@
       <prop name="asset-id" value="unique-asset-ID-14"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500005"/>
     </inventory-item>
 
@@ -2424,9 +2591,19 @@
       <prop name="asset-id" value="unique-asset-ID-15"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500006"/>
     </inventory-item>
 
@@ -2435,14 +2612,25 @@
       <description>
         <p>Instance of the Data Network</p>
       </description>
+      <prop name="asset-id" value="unique-asset-ID-16"/>
       <prop name="vlan-id" value="vlan-ID-16"/>
       <prop name="ipv4-address" class="network" value="10.10.20.0"/>
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="10.10.20.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000016"/>
     </inventory-item>
 
@@ -2450,14 +2638,25 @@
       <description>
         <p>Instance of the Data Network</p>
       </description>
+      <prop name="asset-id" value="unique-asset-ID-17"/>
       <prop name="vlan-id" value="vlan-ID-17"/>
       <prop name="ipv4-address" class="network" value="10.20.20.0"/>
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="10.20.20.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000017"/>
     </inventory-item>
 
@@ -2465,14 +2664,25 @@
       <description>
         <p>Instance of a Production Network</p>
       </description>
+      <prop name="asset-id" value="unique-asset-ID-18"/>
       <prop name="vlan-id" value="vlan-ID-18"/>
       <prop name="ipv4-address" class="network" value="30.30.30.0"/>
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="30.30.30.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="asset-type" value="software"/>
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="public" value="yes"/>
+      <prop name="function" value="data-in-transit" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Usage statement</p>
+        </remarks>
+      </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <responsible-party role-id="asset-owner">
+        <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
+      </responsible-party>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000018"/>
     </inventory-item>
 
@@ -2908,7 +3118,7 @@
             <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
           </responsible-role>
         </by-component>
-        <by-component component-uuid="11111111-2222-4000-8000-009000700001"
+        <by-component component-uuid="11111111-2222-4000-8000-009000800001"
           uuid="11111111-2222-4000-8000-012000030103">
           <description>
             <p>Describe how this procedure satisfies part a.</p>
@@ -16448,6 +16658,7 @@
       <prop name="type" value="policy"/>
       <prop name="published" value="2023-01-01T00:00:00Z"/>
       <prop name="version" value="Document Version"/>
+      <prop name="last-accessed" ns="http://fedramp.gov/ns/oscal" value="2024-12-23T14:30:00-05:00"/>
       <rlink media-type="application/pdf" href="./attachments/policies/sample_CM_policy.pdf"/>
       <base64 filename="sample_policy.pdf" media-type="application/pdf">00000000</base64>
       <remarks>
