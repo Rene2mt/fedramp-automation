@@ -1826,7 +1826,7 @@
       <status state="operational"/>
     </component>
 
-    <component type="validation" uuid="11111111-2222-4000-8000-009000300012">
+    <component type="validation" uuid="11111111-2222-4000-8000-009001200004">
       <title>Database Row Encryption Module (DREM)</title>
       <description>
         <p>Briefly describe the cryptographic module.</p>
@@ -1916,7 +1916,7 @@
         <p>.</p>
       </remarks>
     </component>
-    <component uuid="11111111-2222-4000-8000-009001200001" type="validation">
+    <component uuid="11111111-2222-4000-8000-009001200003" type="validation">
       <title>OpenSSL Some Other Validation</title>
       <description>
         <p>This is another validation of the OpenSSL Cryptographic module that has nothing to do
