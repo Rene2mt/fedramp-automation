@@ -1,7 +1,8 @@
 # Variables
-OSCAL_VERSION = $(shell jq -r .dependencies.oscal package.json)
-OSCAL_CLI_VERSION = $(shell awk '/^oscal-cli/ {print $$2}' .tool-versions)
-OSCAL_CLI = npx oscal@$(OSCAL_VERSION)
+OSCAL_VERSION := $(shell node src/scripts/ci-get-version.js package oscal)
+OSCAL_CLI_VERSION := $(shell node src/scripts/ci-get-version.js tool oscal-cli) 
+OSCAL_SERVER_VERSION := $(shell node src/scripts/ci-get-version.js tool oscal-server)
+OSCAL_SERVER_PATH := $(shell node -e "console.log(process.cwd())")
 SRC_DIR = ./src
 DIST_DIR = ./dist
 XML_DIR = $(DIST_DIR)/content/rev5/baselines/xml
@@ -13,7 +14,7 @@ init-content:
 	@npm install
 	$(OSCAL_CLI) use $(OSCAL_CLI_VERSION)
 	$(OSCAL_CLI) server update
-	$(OSCAL_CLI) server start -bg
+	npx cross-env OSCAL_SERVER_PATH=$(OSCAL_SERVER_PATH)  $(OSCAL_CLI) server start -bg
 # Generate content and perform conversions
 .PHONY: build-content
 build-content:
