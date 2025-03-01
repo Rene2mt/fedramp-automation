@@ -126,5 +126,4 @@ test-dist-content:
 
 .PHONY: test-legacy-content
 test-legacy-content: format
-	@echo "Validating Source files"
-	@$(OSCAL_CLI) validate -f  $(SRC_DIR)/content/rev4/baselines/ -r -s
+	@echo "Validation of Rev4 Source files is obsolete."
