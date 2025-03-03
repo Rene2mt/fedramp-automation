@@ -2243,6 +2243,42 @@
 				</description>
 			</constraint>
 		</set-parameter>
+		<!-- Override FedRAMP tailoring profile alterations -->
+		<alter control-id="ia-5">
+			<remove by-id="ia-5_fr" />
+			<add position="after" by-id="ia-5_gdn">
+				<part id="ia-5_fr" name="item" ns="http://fedramp.gov/ns/oscal">
+					<title>IA-5 Additional FedRAMP Requirements and Guidance</title>
+					<part id="ia-5_fr_smt.1" name="item" ns="http://fedramp.gov/ns/oscal">
+						<prop name="label" value="Requirement:"/>
+						<p>Authenticators must be compliant with NIST SP 800-63-3 Digital Identity Guidelines IAL, AAL, FAL level 2. Link https://pages.nist.gov/800-63-3</p>
+					</part>
+					<part id="ia-5_fr_gdn.1" name="guidance" ns="http://fedramp.gov/ns/oscal">
+						<prop name="label" value="Guidance:"/>
+						<p>SP 800-63C Section 6.2.3 Encrypted Assertion requires that authentication assertions be encrypted when passed through third parties, such as a browser. For example, a SAML assertion can be encrypted using XML-Encryption, or an OpenID Connect ID Token can be encrypted using JSON Web Encryption (JWE).</p>
+					</part>
+				</part>
+			</add>
+		</alter>
+		<alter control-id="ia-11">
+			<remove by-id="ia-11_fr" />
+			<add position="after" by-id="ia-11_gdn">
+				<part id="ia-11_fr" name="item" ns="http://fedramp.gov/ns/oscal">
+					<title>IA-11 Additional FedRAMP Requirements and Guidance</title>
+					<part id="ia-11_fr_gdn.1" name="guidance" ns="http://fedramp.gov/ns/oscal">
+						<prop name="label" value="Guidance:"/>
+						<p>The fixed time period cannot exceed the limits set in SP 800-63. At this writing they are:</p>
+						<ul>
+							<li>AAL2 (moderate baseline) <ul>
+									<li>12 hours or</li>
+									<li>30 minutes of inactivity</li>
+								</ul>
+							</li>
+						</ul>
+					</part>
+				</part>
+			</add>
+		</alter>
 	</modify>
 	<back-matter>
 		<resource uuid="985475ee-d4d6-4581-8fdf-d84d3d8caa48">
