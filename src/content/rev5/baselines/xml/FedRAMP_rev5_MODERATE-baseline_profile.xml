@@ -2279,6 +2279,20 @@
 				</part>
 			</add>
 		</alter>
+		<alter control-id="ma-5.1">
+			<add position="after" by-id="ma-5.1_gdn">
+				<part id="ma-5.1_fr" name="item" ns="http://fedramp.gov/ns/oscal">
+					<title>MA-5 (1) Additional FedRAMP Requirements and Guidance</title>
+					<part id="ma-5.1_fr_smt.1" name="item" ns="http://fedramp.gov/ns/oscal">
+						<prop name="label" value="Requirement:"/>
+						<p>Only MA-5 (1) (a) (1) is required by FedRAMP Moderate Baseline</p>
+					</part>
+				</part>
+			</add>
+		</alter>
+        <alter control-id="sc-20">
+            <remove by-id="sc-20_fr_smt.2" />
+        </alter>
 	</modify>
 	<back-matter>
 		<resource uuid="985475ee-d4d6-4581-8fdf-d84d3d8caa48">
