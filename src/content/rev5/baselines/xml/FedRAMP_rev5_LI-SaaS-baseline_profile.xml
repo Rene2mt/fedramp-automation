@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.4/xml/schema/oscal_complete_schema.xsd" schematypens="http://www.w3.org/2001/XMLSchema" title="OSCAL complete schema"?>
-<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="08cb890c-a447-4414-a323-742221b00ec8">
+<profile xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="3862ba89-7b48-45e2-8daf-582d454724cb">
     <metadata>
         <title>FedRAMP Rev 5 Tailored Low Impact Software as a Service (LI-SaaS) Baseline</title>
         <published>2024-09-24T02:24:00Z</published>
-        <last-modified>2025-01-23T00:00:00Z</last-modified>
+        <last-modified>2025-03-19T00:00:00Z</last-modified>
 	<version>fedramp-3.0.0rc1-oscal-1.1.2</version>
 	<oscal-version>1.1.2</oscal-version>
         <role id="prepared-by">
@@ -13,10 +13,6 @@
         <role id="fedramp-pmo">
             <title>The FedRAMP Program Management Office (PMO)</title>
             <short-name>PMO</short-name>
-        </role>
-        <role id="fedramp-jab">
-            <title>The FedRAMP Joint Authorization Board (JAB)</title>
-            <short-name>JAB</short-name>
         </role>
         <party uuid="8cc0b8e5-9650-4d5f-9796-316f05fa9a2d" type="organization">
             <name>Federal Risk and Authorization Management Program: Program Management Office</name>
@@ -33,19 +29,11 @@
                 <country>US</country>
             </address>
         </party>
-        <party uuid="ca9ba80e-1342-4bfd-b32a-abac468c24b4" type="organization">
-            <name>Federal Risk and Authorization Management Program: Joint Authorization Board</name>
-            <short-name>FedRAMP JAB</short-name>
-            <link href="#a2381e87-3d04-4108-a30b-b4d2f36d001f" rel="logo"/>
-        </party>
         <responsible-party role-id="prepared-by">
             <party-uuid>8cc0b8e5-9650-4d5f-9796-316f05fa9a2d</party-uuid>
         </responsible-party>
         <responsible-party role-id="fedramp-pmo">
             <party-uuid>8cc0b8e5-9650-4d5f-9796-316f05fa9a2d</party-uuid>
-        </responsible-party>
-        <responsible-party role-id="fedramp-jab">
-            <party-uuid>ca9ba80e-1342-4bfd-b32a-abac468c24b4</party-uuid>
         </responsible-party>
     </metadata>
     <import href="#051a77c1-b61d-4995-8275-dacfe688d510">
@@ -1397,56 +1385,29 @@
         <!-- - -     CONTROL MODIFICATIONS      - -  -->
         <!-- - - AC-1 - -  -->
         <alter control-id="ac-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AC-2 - -  -->
         <alter control-id="ac-2">
-            <remove by-id="ac-2_smt.b"/>
-            <remove by-id="ac-2_smt.c"/>
-            <remove by-id="ac-2_smt.d"/>
-            <remove by-id="ac-2_smt.e"/>
-            <remove by-id="ac-2_smt.i"/>
-            <remove by-id="ac-2_smt.j"/>
-            <remove by-id="ac-2_smt.k"/>
-            <remove by-id="ac-2_smt.l"/>
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
             <add by-id="ac-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part id="ac-2_obj_fr" name="assessment-objective" ns="http://fedramp.gov/ns/oscal">
-                    <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="EXAMINE"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="INTERVIEW"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="TEST"/>
-                    <p>Determine if the organization defines information system account types to be identified and selected to support organizational missions/business functions.</p>
-                </part>
-                <part id="ac-2_asmt_fr.1" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" value="EXAMINE"/>
-                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
-                        <p>Access control policy; procedures addressing account management; security plan; information system design documentation; information system configuration settings and associated documentation; list of active system accounts along with the name of the individual associated with each account; list of conditions for group and role membership; notifications or records of recently transferred, separated, or terminated employees; list of recently disabled information system accounts along with the name of the individual associated with each account; access authorization records; account management compliance reviews; information system monitoring records; information system audit records; other relevant documents or records.</p>
-                    </part>
-                </part>
-                <part id="ac-2_asmt_fr.2" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" value="INTERVIEW"/>
-                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
-                        <p>Organizational personnel with account management responsibilities; system/network administrators; organizational personnel with information security responsibilities.</p>
-                    </part>
-                </part>
-                <part id="ac-2_asmt_fr.3" name="assessment-method" ns="http://fedramp.gov/ns/oscal">
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" value="TEST"/>
-                    <part name="assessment-objects" ns="http://fedramp.gov/ns/oscal">
-                        <p>Organizational processes for account management on the information system; automated mechanisms for implementing account management.</p>
-                    </part>
-                </part>
             </add>
         </alter>
         <!-- - - AC-3 - -  -->
@@ -1460,36 +1421,48 @@
         </alter>
         <!-- - - AC-7 - -  -->
         <alter control-id="ac-7">
-
             <add by-id="ac-7_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO for non-privileged users. Attestation for privileged users related to multi-factor identification and authentication.</p>
                 </part>
             </add>
         </alter>
         <!-- - - AC-8 - -  -->
         <alter control-id="ac-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="FED"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>FED - This is related to agency data and agency policy solution.</p>
                 </part>
             </add>
         </alter>
         <!-- - - AC-14 - -  -->
         <alter control-id="ac-14">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="FED"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>FED - This is related to agency data and agency policy solution.</p>
                 </part>
             </add>
@@ -1505,39 +1478,44 @@
         </alter>
         <!-- - - AC-18 - -  -->
         <alter control-id="ac-18">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - All access to Cloud SaaS are via web services and/or API. The device accessed from or whether via wired or wireless connection is out of scope. Regardless of device accessed from, must utilize approved remote access methods (AC-17), secure communication with strong encryption (SC-13), key management (SC-12), and multi-factor authentication for privileged access (IA-2[1]).</p>
                 </part>
             </add>
         </alter>
         <!-- - - AC-19 - -  -->
         <alter control-id="ac-19">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - All access to Cloud SaaS are via web service and/or API. The device accessed from is out of the scope. Regardless of device accessed from, must utilize approved remote access methods (AC-17), secure communication with strong encryption (SC-13), key management (SC-12), and multi-factor authentication for privileged access (IA-2 [1]).</p>
                 </part>
             </add>
         </alter>
         <!-- - - AC-20 - -  -->
         <alter control-id="ac-20">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AC-22 - -  -->
         <alter control-id="ac-22">
-
             <add by-id="ac-22_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1547,63 +1525,102 @@
         </alter>
         <!-- - - AT-1 - -  -->
         <alter control-id="at-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AT-2 - -  -->
         <alter control-id="at-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AT-2(2) -  -->
         <alter control-id="at-2.2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AT-3 - -  -->
         <alter control-id="at-3">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AT-4 - -  -->
         <alter control-id="at-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AU-1 - -  -->
         <alter control-id="au-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AU-2 - -  -->
         <alter control-id="au-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -1619,11 +1636,12 @@
         </alter>
         <!-- - - AU-4 - -  -->
         <alter control-id="au-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the audit data has been determined to have little or no impact to government business/mission needs.</p>
                 </part>
             </add>
@@ -1639,7 +1657,6 @@
         </alter>
         <!-- - - AU-6 - -  -->
         <alter control-id="au-6">
-
             <add by-id="au-6_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1649,52 +1666,68 @@
         </alter>
         <!-- - - AU-8 - -  -->
         <alter control-id="au-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AU-9 - -  -->
         <alter control-id="au-9">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - AU-11 - -  -->
         <alter control-id="au-11">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the audit data has been determined as little or no impact to government business/mission needs.</p>
                 </part>
             </add>
         </alter>
         <!-- - - AU-12 - -  -->
         <alter control-id="au-12">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CA-1 - -  -->
         <alter control-id="ca-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CA-2 - -  -->
         <alter control-id="ca-2">
-
             <add by-id="ca-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1704,34 +1737,36 @@
         </alter>
         <!-- - - CA-2 (1) - -  -->
         <alter control-id="ca-2.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CA-3 - -  -->
         <alter control-id="ca-3">
-
             <add by-id="ca-3_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: There are connection(s) to external systems. Connections (if any) shall be authorized and must: 1) Identify the interface/connection. 2) Detail what data is involved and its sensitivity. 3) Determine whether the connection is one-way or bi-directional. 4) Identify how the connection is secured.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CA-5 - -  -->
         <alter control-id="ca-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Attestation - for compliance with FedRAMP Tailored LI-SaaS Continuous Monitoring Requirements.</p>
                 </part>
             </add>
@@ -1747,7 +1782,6 @@
         </alter>
         <!-- - - CA-7 - -  -->
         <alter control-id="ca-7">
-
             <add by-id="ca-7_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1757,7 +1791,6 @@
         </alter>
         <!-- - - CA-7(4) -  -->
         <alter control-id="ca-7.4">
-
             <add by-id="ca-7.4_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1767,7 +1800,6 @@
         </alter>
         <!-- - - CA-8 -  -->
         <alter control-id="ca-8">
-
             <add by-id="ca-8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1777,31 +1809,44 @@
         </alter>
         <!-- - - CA-9 - -  -->
         <alter control-id="ca-9">
-
             <add by-id="ca-9_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: There are connection(s) to external systems. Connections (if any) shall be authorized and must: 1) Identify the interface/connection. 2) Detail what data is involved and its sensitivity. 3) Determine whether the connection is one-way or bi-directional. 4) Identify how the connection is secured.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CM-1 - -  -->
         <alter control-id="cm-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CM-2 - -  -->
         <alter control-id="cm-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -1817,7 +1862,6 @@
         </alter>
         <!-- - - CM-5 - -  -->
         <alter control-id="cm-5">
-
             <add by-id="cm-5_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1827,43 +1871,29 @@
         </alter>
         <!-- - - CM-6 - -  -->
         <alter control-id="cm-6">
-
             <add by-id="cm-6_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Required - Specifically include details of least functionality.</p>
-                </part>
-                <part id="cm-6_fr" name="item" ns="http://fedramp.gov/ns/oscal">
-                    <title>CM-6(a) Additional FedRAMP Requirements and Guidance</title>
-                    <part id="cm-6_fr_smt.1" name="item" ns="http://fedramp.gov/ns/oscal">
-                        <prop name="label" value="Requirement 1:"/>
-                        <p>The service provider shall use the Center for Internet Security guidelines (Level 1) to establish configuration settings or establishes its own configuration settings if USGCB is not available.</p>
-                    </part>
-                    <part id="cm-6_fr_smt.2" name="item" ns="http://fedramp.gov/ns/oscal">
-                        <prop name="label" value="Requirement 2:"/>
-                        <p>The service provider shall ensure that checklists for configuration settings are Security Content Automation Protocol (SCAP) (<a href="http://scap.nist.gov/">http://scap.nist.gov/</a>) validated or SCAP compatible (if validated checklists are not available).</p>
-                    </part>
-                    <part id="cm-6_fr_gdn.1" name="guidance" ns="http://fedramp.gov/ns/oscal">
-                        <prop name="label" value="Guidance:"/>
-                        <p>Information on the USGCB checklists can be found at: <a href="https://csrc.nist.gov/Projects/United-States-Government-Configuration-Baseline">https://csrc.nist.gov/Projects/United-States-Government-Configuration-Baseline</a>.</p>
-                    </part>
                 </part>
             </add>
         </alter>
         <!-- - - CM-7 - -  -->
         <alter control-id="cm-7">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CM-8 - -  -->
         <alter control-id="cm-8">
-
             <add by-id="cm-8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -1873,67 +1903,119 @@
         </alter>
         <!-- - - CM-10 - -  -->
         <alter control-id="cm-10">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO- Not directly related to protection of the data.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CM-11 - -  -->
         <alter control-id="cm-11">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Boundary is specific to SaaS environment; all access is via web services; users' machine or internal network are not contemplated. External services (SA-9), internal connection (CA-9), remote access (AC-17), and secure access (SC-12 and SC-13), and privileged authentication (IA-2[1]) are considerations.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CP-1 - -  -->
         <alter control-id="cp-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - CP-2 - -  -->
         <alter control-id="cp-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the SaaS has been determined as little or no impact to government business/mission needs.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CP-3 - -  -->
         <alter control-id="cp-3">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the SaaS has been determined as little or no impact to government business/mission needs.</p>
                 </part>
             </add>
         </alter>
         <!-- - - CP-4 - -  -->
         <alter control-id="cp-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the SaaS has been determined as little or no impact to government business/mission needs.</p>
                 </part>
             </add>
@@ -1949,32 +2031,44 @@
         </alter>
         <!-- - - CP-10 - -  -->
         <alter control-id="cp-10">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Loss of availability of the SaaS has been determined as little or no impact to government business/mission needs.</p>
                 </part>
             </add>
         </alter>
         <!-- - - IA-1 - -  -->
         <alter control-id="ia-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IA-2 - -  -->
         <alter control-id="ia-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO for non-privileged users. Attestation for privileged users related to multi-factor identification and authentication - specifically include description of management of service accounts.</p>
                 </part>
             </add>
@@ -1986,19 +2080,14 @@
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <part id="ia-2.1_fr" name="item" ns="http://fedramp.gov/ns/oscal">
-                    <title>IA-2(1) Additional FedRAMP Requirements and Guidance</title>
-                    <part name="guidance" ns="http://fedramp.gov/ns/oscal" class="FedRAMP-Tailored-LI-SaaS">
-                        <p>FedRAMP requires a minimum of multi-factor authentication for all Federal privileged users, if acceptance of PIV credentials is not supported. The implementation status and details of how this control is implemented must be clearly defined by the CSP.</p>
-                    </part>
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
+                    <p>FedRAMP requires a minimum of multi-factor authentication for all Federal privileged users, if acceptance of PIV credentials is not supported. The implementation status and details of how this control is implemented must be clearly defined by the CSP.</p>
                 </part>
             </add>
         </alter>
         <!-- - - IA-2 (2) - -  -->
         <alter control-id="ia-2.2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-            
             <add by-id="ia-2.2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2008,7 +2097,6 @@
         </alter>
         <!-- - - IA-2 (8) - -  -->
         <alter control-id="ia-2.8">
-
             <add by-id="ia-2.8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2021,45 +2109,64 @@
             <add by-id="ia-2.12_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
-            <add position="ending">
-                <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
-                <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part id="ia-2.12_obj_fr" name="objective" ns="http://fedramp.gov/ns/oscal">
-                    <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="EXAMINE"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="INTERVIEW"/>
-                    <prop ns="http://fedramp.gov/ns/oscal" name="method" class="fedramp" value="TEST"/>
-                    <p>Determine if the information system:</p>
-                    <ul>
-                        <li>Accepts PIV credentials.</li>
-                        <li>Electronically verifies PIV credentials.</li>
-                    </ul>
-                </part>
-            </add>
         </alter>
         <!-- - - IA-4 - -  -->
         <alter control-id="ia-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IA-5 - -  -->
         <alter control-id="ia-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IA-5 (1) - -  -->
         <alter control-id="ia-5.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2075,8 +2182,6 @@
         </alter>
         <!-- - - IA-7 - -  -->
         <alter control-id="ia-7">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
             <add by-id="ia-7_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2086,8 +2191,8 @@
         </alter>
         <!-- - - IA-8 - -  -->
         <alter control-id="ia-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2100,7 +2205,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Must document and assess for privileged users. May attest to this control for non-privileged users. FedRAMP requires a minimum of multi-factor authentication for all Federal privileged users, if acceptance of PIV credentials is not supported. The implementation status and details of how this control is implemented must be clearly defined by the CSP.</p>
                 </part>
             </add>
@@ -2113,42 +2219,55 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Must document and assess for privileged users. May attest to this control for non-privileged users. FedRAMP requires a minimum of multi-factor authentication for all Federal privileged users, if acceptance of PIV credentials is not supported. The implementation status and details of how this control is implemented must be clearly defined by the CSP.</p>
                 </part>
             </add>
         </alter>
         <!-- - - IA-8 (4) - -  -->
         <alter control-id="ia-8.4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IA-11 - -  -->
         <alter control-id="ia-11">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IR-1 - -  -->
         <alter control-id="ir-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IR-2 - -  -->
         <alter control-id="ir-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />            
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2164,15 +2283,14 @@
         </alter>
         <!-- - - IR-5 - -  -->
         <alter control-id="ir-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IR-6 - -  -->
         <alter control-id="ir-6">
-
             <add by-id="ir-6_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2182,29 +2300,56 @@
         </alter>
         <!-- - - IR-7 - -  -->
         <alter control-id="ir-7">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - IR-8 - -  -->
         <alter control-id="ir-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Attestation - Specifically attest to US-CERT compliance.</p>
                 </part>
             </add>
         </alter>
         <!-- - - MA-1 - -  -->
         <alter control-id="ma-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2217,16 +2362,25 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - MA-4 - -  -->
         <alter control-id="ma-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2239,16 +2393,26 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - MP-1 - -  -->
         <alter control-id="mp-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2261,7 +2425,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2274,7 +2439,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2287,72 +2453,82 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PE-1 - -  -->
         <alter control-id="pe-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PE-2 - -  -->
         <alter control-id="pe-2">
-
             <add by-id="pe-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PE-3 - -  -->
         <alter control-id="pe-3">
-
             <add by-id="pe-3_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PE-6 - -  -->
         <alter control-id="pe-6">
-
             <add by-id="pe-6_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PE-8 - -  -->
         <alter control-id="pe-8">
-
             <add by-id="pe-8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2365,7 +2541,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2378,7 +2555,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2391,17 +2569,9 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
-                </part>
-            </add>
-            <add by-id="pe-14_smt" position="ending">
-                <part id="pe-14_fr" name="item" ns="http://fedramp.gov/ns/oscal">
-                    <title>PE-14(a) Additional FedRAMP Requirements and Guidance</title>
-                    <part id="pe-14_fr_smt.a" name="item" ns="http://fedramp.gov/ns/oscal">
-                        <prop name="label" value="(a) Requirement:"/>
-                        <p>The service provider measures temperature at server inlets and humidity levels by dew point.</p>
-                    </part>
                 </part>
             </add>
         </alter>
@@ -2413,7 +2583,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
@@ -2426,23 +2597,32 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: Control is not inherited from a FedRAMP-authorized PaaS or IaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PL-1 - -  -->
         <alter control-id="pl-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PL-2 - -  -->
         <alter control-id="pl-2">
-
             <add by-id="pl-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2452,24 +2632,32 @@
         </alter>
         <!-- - - PL-4 - -  -->
         <alter control-id="pl-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PL-4(1) -  -->
         <alter control-id="pl-4.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PL-8 -  -->
         <alter control-id="pl-8">
-
             <add by-id="pl-8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2479,35 +2667,46 @@
         </alter>
         <!-- - - PL-10 - -  -->
         <alter control-id="pl-10">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PL-11 - -  -->
         <alter control-id="pl-11">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-1 - -  -->
         <alter control-id="ps-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-2 - -  -->
         <alter control-id="ps-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="FED"/>
             </add>
@@ -2523,73 +2722,105 @@
         </alter>
         <!-- - - PS-4 - -  -->
         <alter control-id="ps-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-5 - -  -->
         <alter control-id="ps-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-6 - -  -->
         <alter control-id="ps-6">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-7 - -  -->
         <alter control-id="ps-7">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Attestation - Specifically stating that any third-party security personnel are treated as CSP employees.</p>
                 </part>
             </add>
         </alter>
         <!-- - - PS-8 - -  -->
         <alter control-id="ps-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - PS-9 - -  -->
         <alter control-id="ps-9">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - RA-1 - -  -->
         <alter control-id="ra-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - RA-2 - -  -->
         <alter control-id="ra-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
             <add by-id="ra-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2608,16 +2839,16 @@
         </alter>
         <!-- - - RA-3(1) -  -->
         <alter control-id="ra-3.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - RA-5 - -  -->
         <alter control-id="ra-5">
-
             <add by-id="ra-5_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2627,7 +2858,6 @@
         </alter>
         <!-- - - RA-5(2) -  -->
         <alter control-id="ra-5.2">
-
             <add by-id="ra-5.2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2637,7 +2867,6 @@
         </alter>
         <!-- - - RA-5(11) -  -->
         <alter control-id="ra-5.11">
-
             <add by-id="ra-5.11_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2647,7 +2876,6 @@
         </alter>
         <!-- - - RA-7 - -  -->
         <alter control-id="ra-7">
-
             <add by-id="ra-7_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2657,59 +2885,126 @@
         </alter>
         <!-- - - SA-1 - -  -->
         <alter control-id="sa-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-2 - -  -->
         <alter control-id="sa-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-3 - -  -->
         <alter control-id="sa-3">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-4 - -  -->
         <alter control-id="sa-4">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-4(10) - -  -->
         <alter control-id="sa-4.10">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-5 - -  -->
         <alter control-id="sa-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SA-8 - -  -->
         <alter control-id="sa-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2725,7 +3020,6 @@
         </alter>
         <!-- - - SA-22 - -  -->
         <alter control-id="sa-22">
-
             <add by-id="sa-22_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2735,9 +3029,18 @@
         </alter>
         <!-- - - SC-1 - -  -->
         <alter control-id="sc-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -2750,7 +3053,8 @@
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: If availability is a requirement, define protections in place as per control requirement.</p>
                 </part>
             </add>
@@ -2766,7 +3070,6 @@
         </alter>
         <!-- - - SC-8 -  -->
         <alter control-id="sc-8">
-
             <add by-id="sc-8_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2776,7 +3079,6 @@
         </alter>
         <!-- - - SC-8(1) -  -->
         <alter control-id="sc-8.1">
-
             <add by-id="sc-8.1_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2795,56 +3097,61 @@
         </alter>
         <!-- - - SC-13 - -  -->
         <alter control-id="sc-13">
-
             <add by-id="sc-13_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ASSESS"/>
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="CONDITIONAL"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Condition: If implementing need to detail how they meet it or don't meet it.</p>
                 </part>
             </add>
         </alter>
         <!-- - - SC-15 - -  -->
         <alter control-id="sc-15">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="NSO"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>NSO - Not directly related to the security of the SaaS.</p>
                 </part>
             </add>
         </alter>
         <!-- - - SC-20 - -  -->
         <alter control-id="sc-20">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SC-21 - -  -->
         <alter control-id="sc-21">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SC-22 - -  -->
         <alter control-id="sc-22">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SC-28 -  -->
         <alter control-id="sc-28">
-
             <add by-id="sc-28_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2854,7 +3161,6 @@
         </alter>
         <!-- - - SC-28(1) -  -->
         <alter control-id="sc-28.1">
-
             <add by-id="sc-28.1_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2864,24 +3170,32 @@
         </alter>
         <!-- - - SC-39 - -  -->
         <alter control-id="sc-39">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SI-1 - -  -->
         <alter control-id="si-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SI-2 - -  -->
         <alter control-id="si-2">
-
             <add by-id="si-2_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2891,7 +3205,6 @@
         </alter>
         <!-- - - SI-3 - -  -->
         <alter control-id="si-3">
-
             <add by-id="si-3_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2901,7 +3214,6 @@
         </alter>
         <!-- - - SI-4 - -  -->
         <alter control-id="si-4">
-
             <add by-id="si-4_smt" position="starting">
                 <prop ns="http://fedramp.gov/ns/oscal" name="response-point" value="Required"/>
             </add>
@@ -2911,118 +3223,146 @@
         </alter>
         <!-- - - SI-5 - -  -->
         <alter control-id="si-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SI-12 - -  -->
         <alter control-id="si-12">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
-                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS">
+                <part name="guidance" class="FedRAMP-Tailored-LI-SaaS" ns="http://fedramp.gov/ns/oscal">
+                    <title>Additional Tailoring Comments</title>
                     <p>Attestation - Specifically related to US-CERT and FedRAMP communications procedures.</p>
                 </part>
             </add>
         </alter>
         <!-- - - SR-1 - -  -->
         <alter control-id="sr-1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-2 - -  -->
         <alter control-id="sr-2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-2(1) -  -->
         <alter control-id="sr-2.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-3 - -  -->
         <alter control-id="sr-3">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-5 - -  -->
         <alter control-id="sr-5">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-8 - -  -->
         <alter control-id="sr-8">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-10 - -  -->
         <alter control-id="sr-10">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-11 - -  -->
         <alter control-id="sr-11">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-11(1) -  -->
         <alter control-id="sr-11.1">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-11(2) -  -->
         <alter control-id="sr-11.2">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
         </alter>
         <!-- - - SR-12 - -  -->
         <alter control-id="sr-12">
-            <remove by-name="assessment-objective"/>
-            <remove by-name="assessment-method"/>
-
+            <remove by-name="response-point" />
+            <remove by-name="response-point" />
             <add position="ending">
                 <prop ns="http://fedramp.gov/ns/oscal" name="method" class="FedRAMP-Tailored-LI-SaaS" value="ATTEST"/>
             </add>
@@ -3041,9 +3381,9 @@
             <rlink href="https://www.fedramp.gov/assets/img/logo-main-fedramp.png"/>
         </resource>
         <resource uuid="051a77c1-b61d-4995-8275-dacfe688d510">
-            <title>NIST Special Publication (SP) 800-53 revision 5</title>
-            <prop name="version" value="5.1.1"/>
-            <rlink media-type="application/oscal+xml" href="https://raw.githubusercontent.com/usnistgov/oscal-content/refs/tags/v1.3.0/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml"/>
+			<title>NIST Special Publication (SP) 800-53 revision 5</title>
+			<prop name="version" value="5.1.1"/>
+			<rlink media-type="application/oscal+xml" href="FedRAMP_rev5_LOW-baseline_profile.xml"/>
         </resource>
     </back-matter>
 </profile>
