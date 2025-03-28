@@ -736,14 +736,14 @@
 		<set-parameter param-id="ca-02.03_odp.03">
 			<constraint>
 				<description>
-					<p>the conditions of the JAB/AO in the FedRAMP Repository</p>
+					<p>the conditions of the AO in the FedRAMP Repository</p>
 				</description>
 			</constraint>
 		</set-parameter>
 		<set-parameter param-id="ca-03_odp.03">
 			<constraint>
 				<description>
-					<p>at least annually and on input from JAB/AO</p>
+					<p>at least annually and on input from AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
@@ -764,14 +764,14 @@
 		<set-parameter param-id="ca-07_odp.04">
 			<constraint>
 				<description>
-					<p>to include JAB/AO</p>
+					<p>to include AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
 		<set-parameter param-id="ca-07_odp.06">
 			<constraint>
 				<description>
-					<p>to include JAB/AO</p>
+					<p>to include AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
@@ -820,7 +820,7 @@
 		<set-parameter param-id="cm-02_odp.02">
 			<constraint>
 				<description>
-					<p>to include when directed by the JAB</p>
+					<p>to include when directed by the AO</p>
 				</description>
 			</constraint>
 		</set-parameter>

@@ -14,10 +14,6 @@
 			<title>The FedRAMP Program Management Office (PMO)</title>
 			<short-name>PMO</short-name>
 		</role>
-		<role id="fedramp-jab">
-			<title>The FedRAMP Joint Authorization Board (JAB)</title>
-			<short-name>JAB</short-name>
-		</role>
 		<party uuid="8cc0b8e5-9650-4d5f-9796-316f05fa9a2d" type="organization">
 			<name>Federal Risk and Authorization Management Program: Program Management Office</name>
 			<short-name>FedRAMP PMO</short-name>
@@ -33,19 +29,11 @@
 				<country>US</country>
 			</address>
 		</party>
-		<party uuid="ca9ba80e-1342-4bfd-b32a-abac468c24b4" type="organization">
-			<name>Federal Risk and Authorization Management Program: Joint Authorization Board</name>
-			<short-name>FedRAMP JAB</short-name>
-			<link href="#a2381e87-3d04-4108-a30b-b4d2f36d001f" rel="logo"/>
-		</party>
 		<responsible-party role-id="prepared-by">
 			<party-uuid>8cc0b8e5-9650-4d5f-9796-316f05fa9a2d</party-uuid>
 		</responsible-party>
 		<responsible-party role-id="fedramp-pmo">
 			<party-uuid>8cc0b8e5-9650-4d5f-9796-316f05fa9a2d</party-uuid>
-		</responsible-party>
-		<responsible-party role-id="fedramp-jab">
-			<party-uuid>ca9ba80e-1342-4bfd-b32a-abac468c24b4</party-uuid>
 		</responsible-party>
 	</metadata>
 	<import href="#051a77c1-b61d-4995-8275-dacfe688d510">
@@ -960,14 +948,14 @@
 		<set-parameter param-id="ca-02.03_odp.03">
 			<constraint>
 				<description>
-					<p>the conditions of the JAB/AO in the FedRAMP Repository</p>
+					<p>the conditions of the AO in the FedRAMP Repository</p>
 				</description>
 			</constraint>
 		</set-parameter>
 		<set-parameter param-id="ca-03_odp.03">
 			<constraint>
 				<description>
-					<p>at least annually and on input from JAB/AO</p>
+					<p>at least annually and on input from AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
@@ -988,14 +976,14 @@
 		<set-parameter param-id="ca-07_odp.04">
 			<constraint>
 				<description>
-					<p>to include JAB/AO</p>
+					<p>to include AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
 		<set-parameter param-id="ca-07_odp.06">
 			<constraint>
 				<description>
-					<p>to include JAB/AO</p>
+					<p>to include AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
@@ -1044,7 +1032,7 @@
 		<set-parameter param-id="cm-02_odp.02">
 			<constraint>
 				<description>
-					<p>to include when directed by the JAB</p>
+					<p>to include when directed by the AO</p>
 				</description>
 			</constraint>
 		</set-parameter>
